@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace CmdApi.Models
+namespace PatientsApi.Models
 {
     public class Patient
     {

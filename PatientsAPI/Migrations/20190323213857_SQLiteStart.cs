@@ -1,10 +1,9 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PatientsAPI.Migrations
 {
-    public partial class FirstMigration : Migration
+    public partial class SQLiteStart : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +12,7 @@ namespace PatientsAPI.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     firstName = table.Column<string>(nullable: true),
                     lastName = table.Column<string>(nullable: true),
                     birthdate = table.Column<DateTime>(nullable: false)

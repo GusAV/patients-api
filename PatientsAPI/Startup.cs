@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
-using CmdApi.Models;
+using PatientsApi.Models;
 
 namespace PatientsAPI
 {
@@ -23,9 +23,10 @@ namespace PatientsAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //Method to connect to the database connection
-            services.AddDbContext<PatientsContext> 
-                (opt => opt.UseSqlServer(Configuration["Data:PatientsAPIConnection:ConnectionString"]));
+            //Method to connect to the database connection, SQL server code commented
+            services.AddDbContext<PatientsContext>
+                (opt => opt.UseSqlite(Configuration["Data:PatientsAPIConnection:ConnectionString"]));
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddCors(options =>

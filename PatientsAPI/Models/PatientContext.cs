@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
-namespace CmdApi.Models
+namespace PatientsApi.Models
 {
     public class PatientsContext : DbContext
     {
