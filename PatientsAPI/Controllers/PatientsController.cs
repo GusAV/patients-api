@@ -55,10 +55,11 @@ namespace Patients.Controllers
                 return BadRequest();
             }
 
+
             _context.Entry(patient).State = EntityState.Modified;
             _context.SaveChanges();
 
-            return NoContent();
+            return patient;
         }
 
         // DELETE api/patients/n
